@@ -679,20 +679,29 @@ async function loadHistory(limit = 10, targetId) {
   container.innerHTML = '<div class="text-center text-muted"><i class="fas fa-spinner fa-spin"></i> Memuat...</div>';
   
   try {
-    const response = await fetch(`/api/history?limit=${limit}`);
+    const url = `/api/history?limit=${limit}`;
+    console.log('Fetching from:', url);
+    
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    console.log('Response status:', response.status, 'ok:', response.ok);
     
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Error response:', errorText);
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     
-    const contentType = response.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
-      throw new Error("Response bukan JSON");
-    }
-    
     const data = await response.json();
+    console.log('Data received:', data);
     
-    if (data.success && data.history && data.history.length > 0) {
+    if (data.history && data.history.length > 0) {
       let html = '<table class="table-borderless w-100"><thead><tr>';
       html += '<th>NO</th><th>USERNAME</th><th>HADIAH</th>';
       if (limit > 10) html += '<th>WAKTU</th>';
