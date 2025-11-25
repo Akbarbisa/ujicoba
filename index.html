@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Promo Cuan Gratis!</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; background: #fff5e6; }
+    button { padding: 12px 20px; margin: 8px; background: #a96700; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #8a5900; }
+    input { padding: 12px; border-radius: 5px; border: 1px solid #ccc; width: 250px; margin: 5px; }
+    #promo { margin: 20px 0; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h2>🎁 Kesempatan Dapet Cuan Gratis 🎁</h2>
+  <p id="promo">Klik tombol di bawah untuk dapatkan promo spesial!</p>
+
+  <button onclick="generatePromo()">Generate Promo</button>
+  <button onclick="copyPromo()">Copy</button>
+  <br><br>
+
+  <input type="text" id="nomor" placeholder="Masukkan nomor HP (628xxxx)">
+  <button onclick="kirimWA()">Kirim ke WhatsApp</button>
+
+  <script>
+    const promos = [
+      { teks: "Masuk ke kisahpasti.ink dan pake kode XF77Q1 buat dapetin Rp101.259.", link: "https://kisahpasti.ink" },
+      { teks: "Buruan ke cuanpasti.club pake kode XP99LQ dapetin Rp150.000 gratis!", link: "https://cuanpasti.club" },
+      { teks: "Main slot gratis di slotbonus.xyz kode AK55ZY claim bonus Rp200.000!", link: "https://slotbonus.xyz" },
+      { teks: "Ambil bonus slot sekarang di gacorpasti.top kode JQ88WS Rp250.000 menanti!", link: "https://gacorpasti.top" },
+      { teks: "Claim saldo gratis Rp300.000 di bonuscuan.click kode ZY55AA.", link: "https://bonuscuan.click" },
+      { teks: "Spin gratis hari ini di spingratis.fun pake kode PQ11MM.", link: "https://spingratis.fun" },
+      { teks: "Langsung withdraw Rp500.000 tanpa deposit di cuansegar.live kode LL88CC.", link: "https://cuansegar.live" },
+      { teks: "Cuan auto cair ke gacorbos.com pake kode BB99SS Rp150.000!", link: "https://gacorbos.com" },
+      { teks: "Mega bonus Rp600.000 buat member baru di slotuntung.club kode VV88TT.", link: "https://slotuntung.club" }
+      // Tambahin promo baru di sini bro kalau perlu
+    ];
+
+    let currentPromo = promos[0];
+
+    function generatePromo() {
+      const random = Math.floor(Math.random() * promos.length);
+      currentPromo = promos[random];
+      document.getElementById('promo').innerText = currentPromo.teks;
+    }
+
+    function copyPromo() {
+      const promoText = `${currentPromo.teks}\nKlik disini: ${currentPromo.link}`;
+      navigator.clipboard.writeText(promoText).then(() => {
+        alert("Promo disalin!");
+      });
+    }
+
+    function kirimWA() {
+      const nomor = document.getElementById('nomor').value;
+      const pesan = encodeURIComponent(`${currentPromo.teks}\nKlik disini: ${currentPromo.link}`);
+      if (nomor) {
+        window.open(`https://wa.me/${nomor}?text=${pesan}`, '_blank');
+      } else {
+        alert("Masukkan nomor dulu bro!");
+      }
+    }
+  </script>
+</body>
+</html>
