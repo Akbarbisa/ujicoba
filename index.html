@@ -462,20 +462,20 @@
   </div>
 </div>
 
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4743d9b61e.mp3" type="audio/mpeg">
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
 </audio>
-<audio id="spinSound">
-  <source src="https://cdn.pixabay.com/audio/2022/03/24/audio_01d8c0991d.mp3" type="audio/mpeg">
+<audio id="spinSound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
 </audio>
-<audio id="winSound">
-  <source src="https://cdn.pixabay.com/audio/2021/08/04/audio_12b0c7443c.mp3" type="audio/mpeg">
+<audio id="winSound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-retro-game-over-213.mp3" type="audio/mpeg">
 </audio>
-<audio id="clickSound">
-  <source src="https://cdn.pixabay.com/audio/2023/10/30/audio_0237e53743.mp3" type="audio/mpeg">
+<audio id="clickSound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mpeg">
 </audio>
-<audio id="winBigSound">
-  <source src="https://cdn.pixabay.com/audio/2021/08/04/audio_d1718ab41b.mp3" type="audio/mpeg">
+<audio id="winBigSound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-fantasy-game-success-notification-270.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -503,21 +503,14 @@ let isSpinning = false;
 let currentRotation = 0;
 let clickInterval;
 
-let musicStarted = false;
-
-function startBackgroundMusic() {
-  if (!musicStarted) {
-    bgMusic.volume = 0.3;
-    bgMusic.play().catch(e => console.log('Auto-play blocked:', e));
-    musicStarted = true;
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(startBackgroundMusic, 100);
+  bgMusic.volume = 0.2;
   
-  document.body.addEventListener('click', startBackgroundMusic, { once: true });
-  document.body.addEventListener('touchstart', startBackgroundMusic, { once: true });
+  document.body.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play().catch(() => {});
+    }
+  }, { once: true });
 });
 
 function switchTab(tab) {
@@ -717,10 +710,8 @@ spinBtn.addEventListener('click', async () => {
   spinBtn.disabled = true;
   resultDiv.innerHTML = '';
   
-  startBackgroundMusic();
-  
   spinSound.currentTime = 0;
-  spinSound.volume = 0.7;
+  spinSound.volume = 0.6;
   spinSound.play().catch(() => {});
   
   clickSound.volume = 0.4;
@@ -745,12 +736,12 @@ spinBtn.addEventListener('click', async () => {
     setTimeout(() => {
       if (randomIndex >= 4) {
         winBigSound.currentTime = 0;
-        winBigSound.volume = 0.8;
-        winBigSound.play().catch(e => console.log('Win big sound error:', e));
+        winBigSound.volume = 0.9;
+        winBigSound.play().catch(() => {});
       } else {
         winSound.currentTime = 0;
-        winSound.volume = 0.8;
-        winSound.play().catch(e => console.log('Win sound error:', e));
+        winSound.volume = 0.7;
+        winSound.play().catch(() => {});
       }
       createConfetti();
     }, 200);
