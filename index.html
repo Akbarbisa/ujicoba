@@ -66,52 +66,17 @@
     }
     .ribbon {
       position: absolute;
-      top: 28px;
-      right: -35px;
+      top: 22px;
+      right: -38px;
       background: linear-gradient(45deg, #e74c3c, #c0392b);
       color: #fff;
-      padding: 4px 40px;
-      font-size: 0.6rem;
+      padding: 5px 45px;
+      font-size: 0.65rem;
       font-weight: bold;
       transform: rotate(45deg);
       box-shadow: 0 2px 8px rgba(0,0,0,0.5);
       z-index: 5;
-      letter-spacing: 0.2px;
-    }
-    .tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      justify-content: center;
-    }
-    .tab-btn {
-      flex: 1;
-      padding: 12px 20px;
-      background: rgba(0,0,0,0.6);
-      border: 2px solid #444;
-      color: #aaa;
-      font-weight: bold;
-      font-size: 0.95rem;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-transform: uppercase;
-    }
-    .tab-btn.active {
-      background: linear-gradient(45deg, #00ff00, #00cc00);
-      border-color: #00ff00;
-      color: #000;
-      box-shadow: 0 0 15px rgba(0,255,0,0.5);
-    }
-    .tab-btn:hover:not(.active) {
-      border-color: #666;
-      color: #fff;
-    }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
+      letter-spacing: 0.3px;
     }
     .code-input {
       background: #000;
@@ -246,134 +211,6 @@
         opacity: 0;
       }
     }
-    .history-table {
-      background: rgba(0,0,0,0.7);
-      border-radius: 15px;
-      padding: 15px;
-      margin-top: 10px;
-      max-height: 400px;
-      overflow-y: auto;
-    }
-    .history-table table {
-      width: 100%;
-      color: #fff;
-    }
-    .history-table th {
-      background: linear-gradient(45deg, #00ff00, #00cc00);
-      color: #000;
-      padding: 10px 8px;
-      font-size: 0.9rem;
-      border-radius: 8px;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-    .history-table td {
-      padding: 10px 8px;
-      border-bottom: 1px solid #333;
-      font-size: 0.85rem;
-      text-align: center;
-    }
-    .history-table tr:hover td {
-      background: rgba(0,255,0,0.1);
-    }
-    .btn-view-history {
-      background: linear-gradient(45deg, #00ff00, #00cc00);
-      border: none;
-      color: #000;
-      font-weight: bold;
-      font-size: 0.95rem;
-      padding: 12px 20px;
-      border-radius: 50px;
-      width: 100%;
-      margin-top: 16px;
-      box-shadow: 0 8px 20px rgba(0,255,0,0.4);
-      transition: all 0.3s;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-    .btn-view-history:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(0,255,0,0.6);
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.85);
-      overflow-y: auto;
-    }
-    .modal.show {
-      display: block;
-    }
-    .modal-content {
-      background: rgba(17, 17, 17, 0.98);
-      margin: 5% auto;
-      padding: 25px;
-      border: 3px solid #00ff00;
-      border-radius: 25px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 0 40px rgba(0,255,0,0.5);
-      animation: modalSlideIn 0.3s ease-out;
-    }
-    @keyframes modalSlideIn {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 2px solid #00ff00;
-    }
-    .modal-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: linear-gradient(45deg, #ffd700, #00ff00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .close-btn {
-      background: #e74c3c;
-      border: none;
-      color: #fff;
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .close-btn:hover {
-      background: #c0392b;
-      transform: rotate(90deg);
-    }
-    .empty-state {
-      text-align: center;
-      padding: 40px 20px;
-      color: #888;
-    }
-    .empty-state i {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      opacity: 0.5;
-    }
     @media (max-width: 400px) {
       .spin-container { padding: 20px 15px; }
       #wheel-container { width: 240px; height: 240px; margin: 18px auto; }
@@ -388,9 +225,6 @@
         top: -9px;
       }
       .jackpot-glow { font-size: 1.3rem !important; }
-      .tab-btn { font-size: 0.85rem; padding: 10px 15px; }
-      .history-table th { font-size: 0.8rem; padding: 8px 5px; }
-      .history-table td { font-size: 0.75rem; padding: 8px 5px; }
     }
     @media (max-width: 360px) {
       .spin-container { padding: 18px 12px; max-width: 340px; }
@@ -409,75 +243,26 @@
   <div class="ribbon">USER ID = HADIAH!</div>
   <div class="logo">KISAH SLOT</div>
   <div class="subtitle">Klaim Hadiahmu dengan USER ID!</div>
-  
-  <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('hadiah')">
-      <i class="fas fa-gift"></i> Hadiah
-    </button>
-    <button class="tab-btn" onclick="switchTab('riwayat')">
-      <i class="fas fa-history"></i> Riwayat
-    </button>
+  <input type="text" id="userId" class="form-control code-input" placeholder="MASUKKAN USER ID" maxlength="20" autocomplete="off"/>
+  <p class="hint">Masukkan USER ID kamu setelah daftar!</p>
+  <div id="wheel-container">
+    <div class="pointer"></div>
+    <canvas id="wheel" width="240" height="240"></canvas>
   </div>
-  
-  <div id="hadiah-tab" class="tab-content active">
-    <input type="text" id="userId" class="form-control code-input" placeholder="MASUKKAN USER ID" maxlength="20" autocomplete="off"/>
-    <p class="hint">Masukkan USER ID kamu setelah daftar!</p>
-    <div id="wheel-container">
-      <div class="pointer"></div>
-      <canvas id="wheel" width="240" height="240"></canvas>
-    </div>
-    <button class="btn btn-spin" id="spinBtn" disabled>
-      <i class="fas fa-lock"></i> MASUKKAN USER ID
-    </button>
-    <div id="result"></div>
-  </div>
-  
-  <div id="riwayat-tab" class="tab-content">
-    <div class="history-table" id="historyPreview">
-      <div class="text-center text-muted">
-        <i class="fas fa-spinner fa-spin"></i> Memuat riwayat...
-      </div>
-    </div>
-    <button class="btn-view-history" onclick="openModal()">
-      <i class="fas fa-list"></i> Lihat Semua Riwayat
-    </button>
-  </div>
+  <button class="btn btn-spin" id="spinBtn" disabled>
+    <i class="fas fa-lock"></i> MASUKKAN USER ID
+  </button>
+  <div id="result"></div>
 </div>
-
-<div id="historyModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3 class="modal-title">
-        <i class="fas fa-trophy"></i> 50 Riwayat Spin Terakhir
-      </h3>
-      <button class="close-btn" onclick="closeModal()">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="history-table" id="fullHistoryTable">
-      <div class="text-center text-muted">
-        <i class="fas fa-spinner fa-spin"></i> Memuat...
-      </div>
-    </div>
-  </div>
-</div>
-
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4743d9b61e.mp3" type="audio/mpeg">
+<audio id="spinSound" preload="auto">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3" type="audio/mpeg">
 </audio>
-<audio id="spinSound">
-  <source src="https://cdn.pixabay.com/audio/2022/03/24/audio_01d8c0991d.mp3" type="audio/mpeg">
+<audio id="winSound" preload="auto">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2018/2018-preview.mp3" type="audio/mpeg">
 </audio>
-<audio id="winSound">
-  <source src="https://cdn.pixabay.com/audio/2021/08/04/audio_12b0c7443c.mp3" type="audio/mpeg">
+<audio id="clickSound" preload="auto">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
 </audio>
-<audio id="clickSound">
-  <source src="https://cdn.pixabay.com/audio/2023/10/30/audio_0237e53743.mp3" type="audio/mpeg">
-</audio>
-<audio id="winBigSound">
-  <source src="https://cdn.pixabay.com/audio/2021/08/04/audio_d1718ab41b.mp3" type="audio/mpeg">
-</audio>
-
 <script>
 const prizes = [
   {text: "Rp25K", color: "#a29bfe"},
@@ -493,143 +278,13 @@ const ctx = wheel.getContext('2d');
 const spinBtn = document.getElementById('spinBtn');
 const resultDiv = document.getElementById('result');
 const userIdInput = document.getElementById('userId');
-const bgMusic = document.getElementById('bgMusic');
 const spinSound = document.getElementById('spinSound');
 const winSound = document.getElementById('winSound');
 const clickSound = document.getElementById('clickSound');
-const winBigSound = document.getElementById('winBigSound');
 
 let isSpinning = false;
 let currentRotation = 0;
 let clickInterval;
-
-let musicStarted = false;
-
-function startBackgroundMusic() {
-  if (!musicStarted) {
-    bgMusic.volume = 0.3;
-    bgMusic.play().catch(e => console.log('Auto-play blocked:', e));
-    musicStarted = true;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(startBackgroundMusic, 100);
-  
-  document.body.addEventListener('click', startBackgroundMusic, { once: true });
-  document.body.addEventListener('touchstart', startBackgroundMusic, { once: true });
-});
-
-function switchTab(tab) {
-  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-  
-  if (tab === 'hadiah') {
-    document.querySelectorAll('.tab-btn')[0].classList.add('active');
-    document.getElementById('hadiah-tab').classList.add('active');
-  } else {
-    document.querySelectorAll('.tab-btn')[1].classList.add('active');
-    document.getElementById('riwayat-tab').classList.add('active');
-    loadHistory(10, 'historyPreview');
-  }
-}
-
-function openModal() {
-  document.getElementById('historyModal').classList.add('show');
-  loadHistory(50, 'fullHistoryTable');
-}
-
-function closeModal() {
-  document.getElementById('historyModal').classList.remove('show');
-}
-
-window.onclick = function(event) {
-  const modal = document.getElementById('historyModal');
-  if (event.target === modal) {
-    closeModal();
-  }
-}
-
-async function loadHistory(limit = 10, targetId) {
-  const container = document.getElementById(targetId);
-  container.innerHTML = '<div class="text-center text-muted"><i class="fas fa-spinner fa-spin"></i> Memuat...</div>';
-  
-  try {
-    const response = await fetch(`/api/history?limit=${limit}`);
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    const contentType = response.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
-      throw new Error("Response bukan JSON");
-    }
-    
-    const data = await response.json();
-    
-    if (data.success && data.history && data.history.length > 0) {
-      let html = '<table class="table-borderless w-100"><thead><tr>';
-      html += '<th>NO</th><th>USERNAME</th><th>HADIAH</th>';
-      if (limit > 10) html += '<th>WAKTU</th>';
-      html += '</tr></thead><tbody>';
-      
-      data.history.forEach((item, index) => {
-        html += '<tr>';
-        html += `<td>${index + 1}</td>`;
-        html += `<td><i class="fas fa-user text-warning"></i> ${item.username}</td>`;
-        html += `<td><span class="text-success fw-bold">${item.prize}</span></td>`;
-        if (limit > 10) {
-          const date = new Date(item.time);
-          html += `<td style="font-size:0.7rem">${date.toLocaleString('id-ID', {dateStyle: 'short', timeStyle: 'short'})}</td>`;
-        }
-        html += '</tr>';
-      });
-      
-      html += '</tbody></table>';
-      container.innerHTML = html;
-    } else {
-      container.innerHTML = `
-        <div class="empty-state">
-          <i class="fas fa-inbox"></i>
-          <p>Belum ada riwayat spin</p>
-          <small>Jadilah yang pertama!</small>
-        </div>
-      `;
-    }
-  } catch (error) {
-    console.error('Error loading history:', error);
-    container.innerHTML = `
-      <div class="text-center text-danger">
-        <i class="fas fa-exclamation-circle"></i>
-        <p>Gagal memuat riwayat</p>
-        <small>${error.message}</small>
-      </div>
-    `;
-  }
-}
-
-async function saveSpinToDatabase(username, prize, prizeAmount) {
-  try {
-    const response = await fetch('/api/spin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: username,
-        prize: prize,
-        prize_amount: prizeAmount
-      })
-    });
-    
-    const data = await response.json();
-    return data.success;
-  } catch (error) {
-    console.error('Error saving spin:', error);
-    return false;
-  }
-}
 
 if (localStorage.getItem('hasSpun') === 'true') {
   userIdInput.disabled = true;
@@ -710,17 +365,15 @@ userIdInput.addEventListener('input', () => {
   spinBtn.innerHTML = valid ? '<i class="fas fa-play"></i> SPIN & KLAIM!' : '<i class="fas fa-lock"></i> MASUKKAN USER ID';
 });
 
-spinBtn.addEventListener('click', async () => {
+spinBtn.addEventListener('click', () => {
   if (isSpinning || localStorage.getItem('hasSpun') === 'true') return;
   
   isSpinning = true;
   spinBtn.disabled = true;
   resultDiv.innerHTML = '';
   
-  startBackgroundMusic();
-  
   spinSound.currentTime = 0;
-  spinSound.volume = 0.7;
+  spinSound.volume = 0.6;
   spinSound.play().catch(() => {});
   
   clickSound.volume = 0.4;
@@ -737,21 +390,15 @@ spinBtn.addEventListener('click', async () => {
   
   wheel.style.transform = `rotate(${currentRotation}deg)`;
   
-  setTimeout(async () => {
+  setTimeout(() => {
     clearInterval(clickInterval);
     spinSound.pause();
     spinSound.currentTime = 0;
     
     setTimeout(() => {
-      if (randomIndex >= 4) {
-        winBigSound.currentTime = 0;
-        winBigSound.volume = 0.8;
-        winBigSound.play().catch(e => console.log('Win big sound error:', e));
-      } else {
-        winSound.currentTime = 0;
-        winSound.volume = 0.8;
-        winSound.play().catch(e => console.log('Win sound error:', e));
-      }
+      winSound.currentTime = 0;
+      winSound.volume = 0.8;
+      winSound.play().catch(() => {});
       createConfetti();
     }, 200);
     
@@ -765,14 +412,11 @@ spinBtn.addEventListener('click', async () => {
     const prize = prizes[randomIndex];
     const userId = userIdInput.value.trim().toUpperCase();
   
-    const saved = await saveSpinToDatabase(userId, prize.text, prize.text);
-    
     resultDiv.innerHTML = `
       <div class="text-success jackpot-glow">SELAMAT ${userId}!</div>
       <div class="text-warning fw-bold mt-2" style="font-size: 1.8rem;">Kamu Dapat ${prize.text}</div>
       <small class="text-success mt-2 d-block" style="font-size: 0.85rem;">Hadiah masuk ke USER ID: <b>${userId}</b></small>
       <small class="text-muted" style="font-size: 0.8rem;">Cek saldo dalam 1 menit!</small>
-      ${saved ? '<small class="text-info d-block mt-1" style="font-size:0.7rem;"><i class="fas fa-check-circle"></i> Tersimpan di riwayat</small>' : ''}
     `;
     
     localStorage.setItem('hasSpun', 'true');
@@ -783,7 +427,6 @@ spinBtn.addEventListener('click', async () => {
 });
 
 drawWheel();
-loadHistory(10, 'historyPreview');
 </script>
 </body>
 </html>
